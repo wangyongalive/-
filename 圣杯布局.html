@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <style>
+        .container {
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .left {
+            flex: 1;
+            height: 500px;
+            background: blue;
+            order: -1; /*子项目的序号*/
+            text-align: center;
+        }
+
+        .center {
+            flex: 2;
+            height: 500px;
+            background: red;
+            text-align: center;
+        }
+
+        .right {
+            flex: 1;
+            height: 500px;
+            background: green;
+            text-align: center;
+        }
+
+        .header {
+            text-align: center;
+            background-color: aquamarine;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+<header class="header">页头</header>
+<!--  flex布局 -->
+<div class="container">
+    <div class="center">center</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+</div>
+<footer class="footer">页脚</footer>
+</body>
+</html>
