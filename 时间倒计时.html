@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间倒计时</title>
+    <style>
+        div {
+            width: 100%;
+            padding-bottom: 10px; /*自适应高度*/
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+<div id="date"></div>
+<script>
+    let endTime = new Date("2020-3-12 0:00");
+    const countdown = function () {
+        let nowTime = new Date();
+        let days, hours, minutes, seconds, reminders;
+        reminders = endTime - nowTime;
+        days = Math.floor(reminders / 1000 / 60 / 60 / 24);
+        hours = Math.floor(reminders / 1000 / 60 / 60 % 24);
+        minutes = Math.floor(reminders / 1000 / 60 % 60);
+        seconds = Math.floor(reminders / 1000 % 60);
+        let str = `剩余：${days}天 ${hours}小时 ${minutes}分钟 ${seconds}秒`
+        document.getElementById('date').innerHTML = str;
+    }
+    setInterval(countdown, 1000);
+</script>
+</body>
+</html>

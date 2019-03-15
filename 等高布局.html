@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>等高布局</title>
+    <style>
+        .container{
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+            padding-bottom: 10px; /*等高布局 高度自适应*/
+        }
+        .left,.center,.right{
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="left" style="background-color: lightblue;">
+        <span>left</span>
+        <span>left</span>
+        <span>left</span>
+    </div>
+    <div class="center" style="background-color: pink;">
+        <span>center</span>
+        <span>center</span>
+        <span>center</span>
+    </div>
+    <div class="right" style="background-color: lightgreen;">
+        <span>right</span>
+        <span>right</span>
+        <span>right</span>
+    </div>
+</div>
+</body>
+</html>
