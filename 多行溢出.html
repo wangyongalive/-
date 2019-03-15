@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多行溢出</title>
+    <style>
+        div {
+            width: 100px;
+            overflow: hidden; /*裁剪溢出内容*/
+            text-overflow: ellipsis; /*将裁剪内容替换为省略号*/
+            /*white-space: nowrap; !*禁止换行*!*/
+            display: -webkit-box; /*旧版本伸缩属性*/
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2 /*文本行数*/
+        }
+    </style>
+</head>
+<body>
+<div>
+    中国梦，是中国共产党第十八次全国代表大会召开以来fdsfsdfsdfsdf
+
+</div>
+</body>
+</html>
