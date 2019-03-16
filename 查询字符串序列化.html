@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询字符串序列化</title>
+</head>
+<body>
+<button onclick="getParseURL('?ie=utf-8&f=8&rsv_bp=0&rsv_idx=1&tn=baidu&wd=%E6%94%AF%E6%8C%81&rsv_pq=88a45d0a00053af6&rsv_t=aeabwJ7SqoHss5Pq2DwSa7HIJXphzBrlrUoYqGjptNJ4tMMzW9nNVRtI7iM&rqlang=cn&rsv_enter=1&rsv_sug3=4&rsv_sug2=0&inputT=1744&rsv_sug4=1744&rsv_jmp=fail')">
+    序列化结果
+</button>
+<script>
+    let getParseURL = function (url) {
+        // location可以获取当前窗口文档中的url,search属性可以返回查询字符串
+        let parsed = {};
+        //     url = location.search;
+        url = url.slice(1); // 获取去掉？ 后的查询字符串
+        let items = url.split('&');
+        let item = null, name = null, value = null;
+        for (let i = 0; i < items.length; i++) {
+            item = items[i].split('=');
+            name = decodeURIComponent(item[0]);
+            value = decodeURIComponent(item[1]);
+            if (name.length) {
+                parsed[name] = value;
+            }
+        }
+        return parsed;
+    }
+</script>
+
+</body>
+</html>
