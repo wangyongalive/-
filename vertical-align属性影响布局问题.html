@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vertical-align属性影响布局问题</title>
+    <style>
+        p {
+            line-height: 40px;
+        }
+
+        .first {
+            font-size: 30px;
+            background-color: rgb(242, 242, 242);
+            vertical-align: middle;
+        }
+
+        .second {
+            font-size: 20px;
+            background: rgb(0, 176, 240);
+        }
+    </style>
+</head>
+<body>
+<p>
+    <!--子元素设置vertical-align属性的时候，父元素的基线会被移动，-->
+    <!--子元素默认是和父元素的基线对齐的，此时父元素的基线被移动了-->
+    <!--导致参照基线对齐的元素也跟着调整-->
+    <span class="first">备注：</span>
+    <span class="second">2333</span>
+</p>
+</body>
+</html>
