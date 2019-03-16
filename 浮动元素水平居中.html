@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动元素水平居中</title>
+    <style>
+        .div1 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%); /*水平位移是参照元素自身的宽度*/
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+</body>
+</html>
