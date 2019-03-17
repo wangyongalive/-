@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册事件函数跨浏览器</title>
+</head>
+<body>
+<script>
+    let EventUnit = {
+        addHandle: function (element, type, handler) {
+            if (element.addEventListener) { // W3C 标准
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) { // IE事件处理程序
+                element.attachEvent("on" + type, handler)
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler)
+            } else {
+                element["on" + type] = null;
+            }
+        }
+    };
+</script>
+</body>
+</html>
