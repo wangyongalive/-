@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>禁用提交按钮</title>
+</head>
+<body>
+<button id="btn" type="submit">提交</button>
+<script>
+    // disabled 会改变样式
+    let btn = document.getElementById('btn');
+    // 属性设置方式
+    btn.disabled = true;
+    // 特性设置方式
+    btn.setAttribute('disabled', true);
+
+</script>
+</body>
+</html>
