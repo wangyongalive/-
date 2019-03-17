@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态加载外部脚本</title>
+</head>
+<body>
+<script>
+    let loadScript = function (src, fn) {
+        let script = document.createElement('script');
+        script.src = src;
+        document.body.appendChild(script);
+        script.onload = function () {
+            fn.call(this);  // this 指向script标签
+            // console.log(this);
+        }
+    }
+    let callFn = function () {
+        alert(name) //  不要再加this了
+    }
+</script>
+<input type="button" value="获取外部脚本" onclick="loadScript('打乱数组.js',callFn)">
+</body>
+</html>

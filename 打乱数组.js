@@ -5,3 +5,4 @@ for (let i = arr.length - 1; i > 0; i--) {
     [arr[i], arr[random]] = [arr[random], arr[i]];
 }
 console.log(arr);
+let name = '打乱数组.js';
