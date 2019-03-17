@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐藏按钮</title>
+</head>
+<body>
+<button type="submit" id="btn">提交</button>
+<script>
+    // 方法1 display:none 隐藏的元素在正常流中  但不会占用任何空间
+    let btn = document.getElementById('btn');
+    // btn.style.display = 'none';
+    // 方法2  visibility=hidden   隐藏的元素在正常流中  但会占用任何空间
+    // btn.style.visibility = 'hidden';
+    // 方法3：使用绝对定位 让其脱离文档流   再设置一个比较大的偏移
+    btn.style.cssText = "position:absolute;left:-9999px"
+</script>
+</body>
+</html>
