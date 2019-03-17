@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定义元素的class类</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+<div id="info"></div>
+<script>
+    // 方法1 定义元素的className属性
+    let div = document.getElementById('info');
+    div.className = 'class1';
+    // 第二种利用HTML5的classList属性
+    let list = div.classList;
+    list.add('class2');
+    // 第三种利用元素对象的setAttribute()方法
+    // 会覆盖之前的样式
+    div.setAttribute('class', 'class3');
+</script>
+</body>
+</html>
