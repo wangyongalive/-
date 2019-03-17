@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用js设置css属性</title>
+</head>
+<body>
+<div id="info"></div>
+<script>
+    let div = document.getElementById('info');
+    // 方式1
+    // div.style.fontSize = '18px';
+    // div.style.width = '100px';
+    // div.style.height = '100px';
+    // div.style.background = '#303030';
+
+    // 方式2
+    // div.style.cssText = "font-size:18px;width:100px;height:100px;background:#303030";
+
+    // 方式3
+    div.setAttribute('style', "font-size:18px;width:100px;height:100px;background:#303030");
+
+</script>
+</body>
+</html>
