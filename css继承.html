@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            color: red;
+        }
+
+        div {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<!--p标签的颜色属性继承自div,如果没有使用通用选择器 它的颜色就是blue -->
+<!--使用了通用选择器之后  * 虽然权重为0 但是为特殊性  会覆盖div的继承属性-->
+<div>
+    <p>文字颜色</p>
+</div>
+</body>
+</html>
