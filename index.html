@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*方法1 将父元素的font-size设置为0，子元素的font-size设置为实际大小；开始*/
+        /*.parent {*/
+        /*font-size: 0;*/
+        /*}*/
+
+        /*.child {*/
+        /*font-size: 16px;*/
+        /*display: inline-block;*/
+        /*background-color: #ccc;*/
+        /*}*/
+        /*方法1 将父元素的font-size设置为0，子元素的font-size设置为实际大小；结束*/
+
+        /*方法2 父元素word-spacing设置负值 不推荐  开始*/
+        .parent {
+            letter-spacing: -10px;
+        }
+
+        .child {
+            letter-spacing: 0;
+            display: inline-block;
+            background-color: #ccc;
+        }
+        /*方法2 父元素word-spacing设置负值 不推荐 结束*/
+    </style>
+</head>
+<body>
+<!-- HTML代码 -->
+<div class="parent">
+    <div class="child">child</div>
+    <div class="child">child</div>
+    <div class="child">child</div>
+    <div class="child">child</div>
+</div>
+</body>
+</html>
