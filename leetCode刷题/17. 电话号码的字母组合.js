@@ -10,7 +10,7 @@
 * 解题思路：
 * 1.建立一个映射表
 * 2.如果有多个字母组合，显然不能使用for遍历  递归
-* 3.js中提供了一些递归遍历的函数
+* 3.利用js中提供的函数 进行递归
 * */
 let telComb = (str) => {
     // 建立电话号码键盘映射
@@ -27,7 +27,7 @@ let telComb = (str) => {
     str.split('').forEach(item => {
         code.push(map[item]);
     });
-    // 累计
+    // 递归
     let result = code.reduce((pre, cur) => {
         let tmp = [];
         for (let i of pre)
