@@ -17,6 +17,8 @@
 // 1. 向右 -> 向右 -> 向下 -> 向下
 // 2. 向下 -> 向下 -> 向右 -> 向右
 
+
+// 动态规划
 let uniquePathsWithObstacles = (obstacleGrid) => {
     let m = obstacleGrid.length;
     let n = obstacleGrid[0].length;
