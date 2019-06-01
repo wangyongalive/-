@@ -192,25 +192,48 @@
 // console.log(test()); // this:window==>window.fullName
 
 
-function fun() {
-    this.a = 0;
-    this.b = function () {
-        alert(this.a);
-    }
-}
+// function fun() {
+//     this.a = 0;
+//     this.b = function () {
+//         alert(this.a);
+//     }
+// }
+//
+// fun.prototype = {
+//     b: function () {
+//         this.a = 20;
+//         alert(this.a);
+//     },
+//     c: function () {
+//         this.a = 30;
+//         alert(this.a);
+//     }
+// }
+//
+// var my_fun = new fun();
+// my_fun.b(); //=> 私有的方法B this:my_fun my_fun.a='0'
+// my_fun.c(); //=> 公有的方法c this:my_fun my_fun.a ='30'
+// // (把当前实例私有属性A修改为30)
 
-fun.prototype = {
-    b: function () {
-        this.a = 20;
-        alert(this.a);
-    },
-    c: function () {
-        this.a = 30;
-        alert(this.a);
-    }
-}
 
-var my_fun = new fun();
-my_fun.b(); //=> 私有的方法B this:my_fun my_fun.a='0'
-my_fun.c(); //=> 公有的方法c this:my_fun my_fun.a ='30'
-// (把当前实例私有属性A修改为30)
+(function () {
+    let pro = Array.prototype;
+    // 数组去重
+    pro.myDistinct = function myDistinct() {
+        let obj = {};
+        // this 指向当前的实例
+        for (let i = 0; i < this.length; i++) {
+            let item = this[i];
+            if (typeof obj[item] !== 'undefined') { // 已经存在了
+                this[i] = this[this.length - 1];
+                this.length--; // 将最后一项移动到当前位置  减少复杂度
+                i--;
+                continue;
+            }
+            obj[item] = item;
+        }
+        obj = null; // 释放堆内存
+        return this;
+    }
+})();
+console.log([1, 2, 3, 4, 4].myDistinct());
