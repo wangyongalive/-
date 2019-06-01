@@ -177,16 +177,40 @@
 // console.log(num); // 65 浏览器中是65
 // console.log(obj.num); // 30
 
-var fullName = 'language';
-var obj = {
-    fullName: 'javascript',
-    prop: {
-        getFullName: function () {
-            return this.fullName;
-        }
+// var fullName = 'language';
+// var obj = {
+//     fullName: 'javascript',
+//     prop: {
+//         getFullName: function () {
+//             return this.fullName;
+//         }
+//     }
+// }
+// console.log(obj.prop.getFullName()); // this:obj.prop
+// // obj.prop.fullName==undefined
+// var test = obj.prop.getFullName;
+// console.log(test()); // this:window==>window.fullName
+
+
+function fun() {
+    this.a = 0;
+    this.b = function () {
+        alert(this.a);
     }
 }
-console.log(obj.prop.getFullName()); // this:obj.prop
-// obj.prop.fullName==undefined
-var test = obj.prop.getFullName;
-console.log(test()); // this:window==>window.fullName
+
+fun.prototype = {
+    b: function () {
+        this.a = 20;
+        alert(this.a);
+    },
+    c: function () {
+        this.a = 30;
+        alert(this.a);
+    }
+}
+
+var my_fun = new fun();
+my_fun.b(); //=> 私有的方法B this:my_fun my_fun.a='0'
+my_fun.c(); //=> 公有的方法c this:my_fun my_fun.a ='30'
+// (把当前实例私有属性A修改为30)
