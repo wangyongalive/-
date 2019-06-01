@@ -145,3 +145,48 @@
 // var res = fn(ary);
 // console.log(ary); // [ 0, 2, 3, 4 ]
 // console.log(res); // [ 100 ]
+
+
+// function fn(i) {
+//     return function (n) {
+//         console.log(n + (i++));
+//     }
+// }
+// var f = fn(10);
+// f(20); // 30
+// fn(20)(40); // 60
+// fn(30)(50); // 80
+// f(30); // 41
+
+
+// var num = 10;
+// var obj = {num: 20};
+// obj.fn = (function (num) {
+//     // num私有变量
+//     this.num = num * 3; // this:window
+//     num++;
+//     return function (n) {
+//         this.num += n;
+//         num++;
+//         console.log(num); // 闭包
+//     }
+// })(obj.num);
+// var fn = obj.fn;
+// fn(5); // 22  this <-->window
+// obj.fn(10); // 23  this<---> obj
+// console.log(num); // 65 浏览器中是65
+// console.log(obj.num); // 30
+
+var fullName = 'language';
+var obj = {
+    fullName: 'javascript',
+    prop: {
+        getFullName: function () {
+            return this.fullName;
+        }
+    }
+}
+console.log(obj.prop.getFullName()); // this:obj.prop
+// obj.prop.fullName==undefined
+var test = obj.prop.getFullName;
+console.log(test()); // this:window==>window.fullName
