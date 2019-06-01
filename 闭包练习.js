@@ -216,24 +216,30 @@
 // // (把当前实例私有属性A修改为30)
 
 
-(function () {
-    let pro = Array.prototype;
-    // 数组去重
-    pro.myDistinct = function myDistinct() {
-        let obj = {};
-        // this 指向当前的实例
-        for (let i = 0; i < this.length; i++) {
-            let item = this[i];
-            if (typeof obj[item] !== 'undefined') { // 已经存在了
-                this[i] = this[this.length - 1];
-                this.length--; // 将最后一项移动到当前位置  减少复杂度
-                i--;
-                continue;
-            }
-            obj[item] = item;
-        }
-        obj = null; // 释放堆内存
-        return this;
-    }
-})();
-console.log([1, 2, 3, 4, 4].myDistinct());
+// (function () {
+//     let pro = Array.prototype;
+//     // 数组去重
+//     pro.myDistinct = function myDistinct() {
+//         let obj = {};
+//         // this 指向当前的实例
+//         for (let i = 0; i < this.length; i++) {
+//             let item = this[i];
+//             if (typeof obj[item] !== 'undefined') { // 已经存在了
+//                 this[i] = this[this.length - 1];
+//                 this.length--; // 将最后一项移动到当前位置  减少复杂度
+//                 i--;
+//                 continue;
+//             }
+//             obj[item] = item;
+//         }
+//         obj = null; // 释放堆内存
+//         return this;
+//     }
+// })();
+// console.log([1, 2, 3, 4, 4].myDistinct());
+
+// document.parentNode 和 document.parentnode 的区别
+// document.parentNode // 文档的父节点 null
+// document.parentnode // 没有这个属性 undefined
+
+
