@@ -242,4 +242,18 @@
 // document.parentNode // 文档的父节点 null
 // document.parentnode // 没有这个属性 undefined
 
-
+/*
+*   undefined
+*   1： 变量提升：只声明未定义 默认就是undefined
+*   2. 严格模式下：没有明确的执行主体，this就是undefined
+*   3.对象没有这个属性名
+*   4.函数定义形参不传值
+*   5.函数没有返回值
+*
+*   null
+*   1.js中如果没有获取到指定的对象，结果一般都是null
+*   2.手动设置变量的值或者对象某个属性值为null
+*   3.Object.prototype.__proto__的值也是null
+*   4. 正则捕获的时候，如果没有捕获结果 默认也是null
+*
+* */
