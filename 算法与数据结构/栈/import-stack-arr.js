@@ -1,6 +1,7 @@
 import Stack from './stack-arr.js';
 
 const stack = new Stack();
+
 console.log(stack.isEmpty()); // true
 stack.push(5);
 stack.push(8);
