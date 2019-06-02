@@ -1,6 +1,6 @@
 export default class StackObj {
     constructor() {
-        this.count = 0;
+        this.count = 0; // 与数组一样 下标从0 开始
         this.items = {};
     }
 
