@@ -43,7 +43,7 @@ export default class StackObj {
         if (this.isEmpty()) {
             return '';
         }
-        let objString = `${this.items[0]}`;
+        let objString = `${this.items[0]}`; // 数组之间用逗号隔开 先取第一个元素
         for (let i = 1; i < this.count; i++) {
             objString += `,${this.items[i]}`;
         }
