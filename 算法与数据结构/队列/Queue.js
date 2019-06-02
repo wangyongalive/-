@@ -21,7 +21,7 @@ export default class Queue {
         return result;
 
     }
-
+    // 返回队首元素
     peek() {
         if (this.isEmpty()) {
             return undefined;
