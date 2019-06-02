@@ -1,5 +1,5 @@
 // node --experimental-modules xxx.mjs
-import {Stack} from './Stack';
+import {StackArr} from './stack-arr';
 
 let s = new Stack();
 s.push("David");
