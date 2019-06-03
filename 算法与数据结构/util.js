@@ -22,3 +22,9 @@ export function swap(arr, a, b) {
 export function reverseCompare(compareFn) {
     return (a, b) => compareFn(b, a);
 }
+
+export const DOES_NOT_EXIST = -1;
+
+export function defaultEquals(a, b) {
+    return a === b;
+}
