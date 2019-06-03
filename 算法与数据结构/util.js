@@ -14,3 +14,11 @@ export function defaultCompare(a, b) {
     }
     return a < b ? Compare.lessThan : Compare.moreThan;
 }
+
+export function swap(arr, a, b) {
+    [arr[a], arr[b]] = [arr[b], arr[a]]
+}
+
+export function reverseCompare(compareFn) {
+    return (a, b) => compareFn(b, a);
+}
