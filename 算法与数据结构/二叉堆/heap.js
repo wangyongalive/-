@@ -94,6 +94,10 @@ export default class MinHeap {
             this.siftDown(element); // 递归
         }
     }
+
+    toArr() {
+        return this.heap;
+    }
 }
 
 
@@ -137,3 +141,15 @@ maxHeap.insert(1);
 
 console.log('最大堆的大小为: ', maxHeap.size());
 console.log('最大值为： ', maxHeap.findMinMax());
+
+
+// 堆排序
+const maxHeapSort = new MaxHeap();
+let arr = [2, 5, 6, 7, 4, 9, 0, 8, 1, 3];
+for (let i = 0; i < arr.length; i++) {
+    maxHeapSort.insert(arr[i]);
+}
+for (let i = 0; i < arr.length; i++) {
+    console.log(maxHeapSort.extract());
+}
+
