@@ -17,6 +17,6 @@ function mergeSort(items) {
     }
     let middle = Math.floor(items.length / 2),
         left = items.slice(0, middle),
-        right = items.slice(middle);
-    return merge(mergeSort(left), mergeSort(right));
+        right = items.slice(middle); // 分解
+    return merge(mergeSort(left), mergeSort(right)); // 合并
 }
