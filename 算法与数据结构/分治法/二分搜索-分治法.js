@@ -22,5 +22,5 @@ export function binarySearch(array, value, compareFn = defaultCompare) {
 }
 
 
-let arr = [1, 2, 3, 4, 5, 6]
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17];
 console.log(binarySearch(arr, 5));
